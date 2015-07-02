@@ -1,0 +1,4 @@
+### Guard::Grunt
+guard 'grunt' do
+  watch(%r{^Gruntfile.js$})
+end
