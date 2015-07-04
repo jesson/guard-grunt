@@ -5,7 +5,7 @@ start/stop/restart grunt.
 
 ### Getting Started
 
-After [install
+Before you need to [install
 Grunt](http://gruntjs.com/getting-started)!
 
 If you're using Bundler, you can add guard-grunt to your Gemfile:
