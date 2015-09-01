@@ -7,6 +7,7 @@ module Guard
     DEFAULT_SIGNAL = :QUIT
 
     def initialize(options = {})
+      @options = options
       @pid = nil
       @grunt_installed = grunt_installed?
       super
@@ -62,7 +63,13 @@ module Guard
     private
 
     def cmd
-      'grunt watch'
+      "grunt #{flags} watch"
+    end
+
+    def flags
+      @options.map do |(flag, value)|
+        "--#{flag} #{value}"
+      end.join(' ')
     end
 
     def env
