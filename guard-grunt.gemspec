@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'guard/grunt/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "guard-grunt"
-  spec.version       = Guard::Grunt::VERSION
+  spec.version       = File.open('VERSION') { |f| f.read }
   spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["Georgeo Rocco"]
   spec.email         = ["ggrocco@gmail.com"]

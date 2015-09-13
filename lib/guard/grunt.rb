@@ -9,6 +9,7 @@ module Guard
     def initialize(options = {})
       @pid = nil
       @grunt_installed = grunt_installed?
+      @root ||= options[:root]
       super
     end
 
@@ -62,7 +63,11 @@ module Guard
     private
 
     def cmd
-      'grunt watch'
+      if @root
+        "cd #{@root} && grunt watch"
+      else
+        'grunt watch'
+      end
     end
 
     def env
